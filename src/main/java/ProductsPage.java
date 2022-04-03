@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 public class ProductsPage extends BasePage {
 
-    By productNameLocator = new By.ByCssSelector("h2.clhtrN");
+    By productNameLocator = new By.ByCssSelector("li.dyekHG");
     By categoryOptionLocator = By.xpath("//*[@id=\"__next\"]/main/div[2]/div/div/div[1]/div/div/div[1]/div[1]/div[1]");
 
     By paginationLocator = By.xpath("//li[contains(@data-testid,'pagination-list-item')]");

@@ -21,7 +21,7 @@ public class TestAddProductToCart extends BaseTest {
         homePage.navbar().search("bilgisayar");
     }
 
-    @Test
+   /* @Test
     @Order(2)
     public void goToSelectedPagination() {
         ProductsPage productsPage = new ProductsPage(driver);
@@ -29,24 +29,28 @@ public class TestAddProductToCart extends BaseTest {
         Assertions.assertTrue(productsPage.isOnTruePage(),
                 "Not on true page");
     }
-
+*/
     @Test
-    @Order(3)
+    @Order(2)
     public void selectAProduct() {
+        ProductsPage productsPage = new ProductsPage(driver);
+        ProductDetailPage productDetailPage = new ProductDetailPage(driver);
         productsPage.selectProduct(1);
         Assertions.assertTrue(productDetailPage.isOnProductDetailPage(),
                 "Not on product detail page");
     }
 
     @Test
-    @Order(4)
+    @Order(3)
     public void writeAProductInfo() {
 
     }
 
     @Test
-    @Order(5)
+    @Order(4)
     public void addProductToCart() {
+        ProductDetailPage productDetailPage = new ProductDetailPage(driver);
+        Navbar navbar = new Navbar(driver);
         productDetailPage.addToCart();
         Assertions.assertTrue(navbar.isProductCountUp(),
                 "Product count did not increase");
@@ -55,6 +59,7 @@ public class TestAddProductToCart extends BaseTest {
     @Test
     @Order(6)
     public void goToCart() {
+        Navbar navbar = new Navbar(driver);
         navbar.gotToCart();
         Assertions.assertTrue(cartPage.checkIfProductAdded(),
                 "Product was not add to cart");

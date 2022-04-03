@@ -15,7 +15,7 @@ public class BaseTest {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.get("https://www.gittigidiyor.com/");
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
         System.out.println("Test initiated");
     }
 

@@ -24,7 +24,7 @@ public class Navbar extends BasePage {
 
     public boolean isProductCountUp() {
 
-        return getCartCount()==2;
+        return getCartCount()>0;
     }
 
     public boolean checkIfProductAdded() {
